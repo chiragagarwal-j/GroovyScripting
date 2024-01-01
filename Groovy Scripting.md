@@ -629,3 +629,28 @@ for ( i in l[ 1..3]) {
 	println i
 }
 ```
+
+## Regular expression
+- Search and display the data 
+- Pattern matching 
+- Text manipulation
+	
+wild card characters or meta characters or anchors or indentifiers
+
+1)Character pattern
+
+`*  +  ? . [] [-] [^] {m} {m,n} {m,} |`
+
+2)Word pattern
+
+a)exact word 
+
+b)start of word 
+
+c)end of word 
+
+3)Line pattern
+
+a)Lines start with ^
+
+b)Lines ends with $
