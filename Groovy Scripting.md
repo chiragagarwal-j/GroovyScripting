@@ -804,3 +804,26 @@ abbbbbbbbbbbbbbbbbbbbc
 abc Not accept
 ```
 
+### `|` : It matches two or more strings
+
+**Regex Examples:**
+```
+expressions for
+- name: name should contains min of 2 characters & should contains only string 
+		
+[a-zA-Z]{2,}		
+
+- Mobile number: should be 10 digit number, number should start with 6 to 9
+
+[6-9][0-9]{9} or ^[6-9][0-9]{9}$
+
+-search email
+
+em = new File ("C:/Users/chiragagarwal.j/Downloads/groovy_lab/files/email.txt")
+for ( i in em.readLines()){
+	if (i =~ /\w+[@]\w+[.][a-zA-Z][2,4]/){
+		println i
+	}
+}
+
+```
