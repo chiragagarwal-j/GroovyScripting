@@ -534,3 +534,71 @@ println "push 0 to list: " + ls
 
 println "drop first 2 values: " + ls.drop(2)
 ```
+
+## Map or Hash map or Dictionary or Associative array
+```
+emp_details=[101,"Jhon",102,"Bob",103,"Siri"]  =>Indexed Array
+
+emp_details=[101:"Jhon",102:"Bob",103:"Siri"]  =>Assosiative Array
+```
+
+### Hash Map methods
+1) keySet() : It is used to take all the keys from the hash map
+2) values() : It is used to take all the values from the hash 
+3) size() : It is used to get the total size of the hash map
+4) containskey() : It is used to verify the given key exist or not 
+
+```
+carDetails = [
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2022,
+    "color": "Blue"
+]
+
+//Display the initial car details
+println "Initial Car Details: $carDetails"
+
+//Getting the set of keys
+keys = carDetails.keySet()
+println "Keys: $keys"
+
+//Getting the collection of values
+values = carDetails.values()
+println "Values: $values"
+
+//Getting the size of the HashMap
+size = carDetails.size()
+println "Size: $size"
+
+//Checking if a key exists using containsKey
+containsModel = carDetails.containsKey("model")
+println "Contains 'model' Key: $containsModel"
+
+
+//Getting the value for a specific key
+make = carDetails.get("make")
+println "Make: $make"
+
+//Checking if a key exists
+hasModel = carDetails.containsKey("model")
+println "Has Model Key: $hasModel"
+
+//Removing a key-value pair
+carDetails.remove("color")
+println "Car Details after removing 'color': $carDetails"
+
+//Updating a value for a key
+carDetails.put("year", 2023)
+println "Car Details after updating 'year' to 2023: $carDetails"
+
+//Iterating over keys and values
+println "Iterating over Car Details:"
+carDetails.each { key, value ->
+    println "$key: $value"
+}
+
+//Checking if the HashMap is empty
+isEmpty = carDetails.isEmpty()
+println "Is Car Details empty: $isEmpty"
+```
