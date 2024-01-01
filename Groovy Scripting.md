@@ -672,74 +672,49 @@ for ( i in fo.readLines()){
 
 ## Character pattern
 
-### `*` : matches 0 or more occurences of preciding character
+### `*` : It matches 0 or more occurences of preciding character
 ```
 eg: ab*c 
 
 ac 
 abc 
 abbbbbbbc
-a7c Not accept
-abb7c Not accept
+a7c Not accepted
+abb7c Not accepted
 ```
 
-+
-===
-It matches 1 or more occurences of preceding character
+### `+` : It matches 1 or more occurences of preceding character
+```
+eg : ab+c
 
-
-ab+c 
-ac Not accept
+ac Not accepted
 abc 
 abbbc
+```
 
-
-?
-==
-It matches 0 or 1 occurences of preceding character
-
-
-ab?c 
+### `?` : It matches 0 or 1 occurences of preceding character.
+```
+eg : ab?c 
 
 ac 
 abc 
+```
 
-
-color
-colour 
-
-colou?r 
-
-color 
-colour 
-
-colou*r 
-
-colouuuuuuur
-
-.
-===
-It matches any one character
-
-
-a.c 
+### `.` : It matches any one character
+```
+eg: a.c 
 
 abc 
 a7c 
 a&c 
 a0c
 a c
+```
 
-anything
+### `[]` :It matches any one character from the given list or range 
 
-.*  =>anything or all 
-
-
-[]
-====
-It matches any one character from the given list or range 
-
-a[aeiou]c 
+```
+eg: a[aeiou]c 
 
 aac
 aec
@@ -772,30 +747,29 @@ a[0-9]+c
 a98c
 
 a[a-zA-Z0-9]+c 
+```
 
-[^ ]
-======
-It matches any one character other than the given list or range
+### `[^ ]` : It matches any one character other than the given list or range
 
-a[^aeiou]c 
+```
+eg: a[^aeiou]c 
 
 aec Not accept
 
 apc 
-
-
 
 [^a-z] non-lowercase
 [^A-Z] non-uppercase
 [^0-9] non-digit or \D
 [^A-Za-z] non-alphabet
 [^0-9A-Za-z] non-alphanumeric or \W
+```
 
+**\s whitespace(space, tabspace, newline)**
 
-\s whitespace(space, tabspace, newline)
+```
+\\How to search line should contains only 3 words 
 
-How to search line should contains only 3 words 
-===================================================
 \w+\s\w+\s\w+
 
 or 
@@ -804,26 +778,29 @@ or
 or 
 
 .*\s.*\s.*
+```
 
-{m}
-====
-It matches exact m occurences of preceding character
-ab{3}c 
-abbbc 
-{m,n}
-=====
-It matches min m occurences and max n occurences of preceding character
-ab{3,5}c 
+### `{m}` : It matches exact m occurences of preceding character.
+
+```
+eg : ab{3}c 
+abbbc
+```
+
+### `{m,n}` : It matches min m occurences and max n occurences of preceding character
+
+```
+eg : ab{3,5}c 
 abbbc 
 abbbbc 
-abbbbbc 
-{m,}
-=====
-It matches min m occurences and no limit for max 
-ab{2,}c 
+abbbbbc
+``` 
+### `{m,}` : It matches min m occurences and no limit for max 
+
+```
+eg : ab{2,}c 
 abbc 
 abbbbbbbbbbbbbbbbbbbbc
 abc Not accept
-
-
+```
 
