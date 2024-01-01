@@ -669,3 +669,161 @@ for ( i in fo.readLines()){
 	}
 }
 ```
+
+## Character pattern
+
+### `*` : matches 0 or more occurences of preciding character
+```
+eg: ab*c 
+
+ac 
+abc 
+abbbbbbbc
+a7c Not accept
+abb7c Not accept
+```
+
++
+===
+It matches 1 or more occurences of preceding character
+
+
+ab+c 
+ac Not accept
+abc 
+abbbc
+
+
+?
+==
+It matches 0 or 1 occurences of preceding character
+
+
+ab?c 
+
+ac 
+abc 
+
+
+color
+colour 
+
+colou?r 
+
+color 
+colour 
+
+colou*r 
+
+colouuuuuuur
+
+.
+===
+It matches any one character
+
+
+a.c 
+
+abc 
+a7c 
+a&c 
+a0c
+a c
+
+anything
+
+.*  =>anything or all 
+
+
+[]
+====
+It matches any one character from the given list or range 
+
+a[aeiou]c 
+
+aac
+aec
+aic
+aoc
+auc
+
+apc Not accept
+aeic Not accept
+
+a[aeiou]+c 
+
+aec 
+aeic 
+aeioc 
+
+[a-z] lowercase
+[A-Z] uppercase
+[0-9] digit or \d 
+[A-Za-z] alphabet
+[0-9A-Za-z] alphanumeric or \w 
+
+
+a[0-9]c 
+
+a9c 
+
+a[0-9]+c 
+
+a98c
+
+a[a-zA-Z0-9]+c 
+
+[^ ]
+======
+It matches any one character other than the given list or range
+
+a[^aeiou]c 
+
+aec Not accept
+
+apc 
+
+
+
+[^a-z] non-lowercase
+[^A-Z] non-uppercase
+[^0-9] non-digit or \D
+[^A-Za-z] non-alphabet
+[^0-9A-Za-z] non-alphanumeric or \W
+
+
+\s whitespace(space, tabspace, newline)
+
+How to search line should contains only 3 words 
+===================================================
+\w+\s\w+\s\w+
+
+or 
+.+\s.+\s.+\s 
+
+or 
+
+.*\s.*\s.*
+
+{m}
+====
+It matches exact m occurences of preceding character
+ab{3}c 
+abbbc 
+{m,n}
+=====
+It matches min m occurences and max n occurences of preceding character
+ab{3,5}c 
+abbbc 
+abbbbc 
+abbbbbc 
+{m,}
+=====
+It matches min m occurences and no limit for max 
+ab{2,}c 
+abbc 
+abbbbbbbbbbbbbbbbbbbbc
+abc Not accept
+
+
+
