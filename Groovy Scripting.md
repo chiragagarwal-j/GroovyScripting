@@ -889,10 +889,102 @@ def x=10
 import modulename 
 
 	modulename().propertyname()
-```	
+```
+
+eg:
+
+```
+import arithmetic
+x = System.console().readLine "Enter a num : "
+x = x as int
+y = x + 2
+
+result = new arithmetic().sum(x,y)
+println result
+```
+
 ### How to create a alias name for module 
 ```
 import modulename as aliasname
 
 	aliasname().propertyname()
+```
+
+### Script to read json file with groovy
+
+```
+import groovy.json.JsonSlurper
+
+def jsonText = '{"name":"John","age":"30", "car" : null}'
+def jsonSlurper = new JsonSlurper()
+def jsonObject = jsonSlurper.parseText(jsonText)
+
+println jsonObject
+println jsonObject["name"]
+
+println "Name : ${jsonObject.name}, Age : ${jsonObject.age}"
+```
+
+```
+import groovy.json.JsonSlurper
+
+//specify path to json file
+def filePath = "C:/Users/chiragagarwal.j/Downloads/groovy_lab/json_example.json"
+
+//create a JsonSlurper object
+def jsonSlurper = new JsonSlurper()
+
+//Parse JSON file
+def jsonData = jsonSlurper.parse(new File(filePath))
+println jsonData
+println jsonData.getClass()
+
+//Access data from parsed JSON
+println "name : ${jsonData["name"]}"
+println "age : ${jsonData.age}"
+```
+
+### Script to write data to json file using groovy
+
+```
+import groovy.json.JsonOutput
+
+//Data to written to Json file
+def jsonData = [
+	name : "John Doe",
+	age : 30,
+	city : "ABC"
+]
+
+//Specify path to JSON file
+def filePath = 'writeToJson.json'
+
+//convert data to JSON format
+def jsonContent = JsonOutput.toJson(jsonData)
+
+//write json content to file
+new File(filePath).text = jsonContent
+
+println "Json data written to File"
+```
+
+- **JsonOutput.toJson(jsonData) is used to convert the groovy data structure (jsonData map) to a JSON formatted string**
+
+- **new File(filePath).text = jsonContent is used to write JSON content to file.**
+
+## Exception Handling
+
+- Compile time error
+
+- Runtime error
+
+```
+num1 = 10
+num2 = 0
+try {
+	def result = num1/num2
+	println "Result : $result"
+} catch (Exception e){
+	println "An unexpected error occured: ${e.message}"
+}
 ```
