@@ -842,6 +842,8 @@ c)end of word
 
 eg : "string\b"
 
+Examples: 
+
 ```
 ^groovy.*groovy$ : Lines start with groovy and ends with groovy
 
@@ -850,4 +852,47 @@ eg : "string\b"
 ^[groovy] : Lines start with any character g or r or o or v or y 
 
 ^[^groovy] : Lines does not start with g or r or o or v or y 
+```
+
+## Functions or Sub-Routines or Procedures 
+- Re-usability.
+- It reduces the code length
+	
+1)built in functions.
+
+eg: println,File.
+	
+2)user defined functions
+
+`def` : It is used to create a function
+
+## Scope of variables
+1) Global variables
+- In groovy every variable, by default scope is global scope.
+- Global variables can access anywhere
+
+2) Local variables
+- `def` is a keyword to create a local scope for the variable
+
+eg:
+def x=10
+
+**Local variable can access only with in that specific function.**
+
+## Modules
+- Module is collection of functions, statements, methods etc.
+- Module extension is .groovy
+- Every groovy script is one module 
+
+### How to access module propetiers
+```
+import modulename 
+
+	modulename().propertyname()
+```	
+### How to create a alias name for module 
+```
+import modulename as aliasname
+
+	aliasname().propertyname()
 ```
