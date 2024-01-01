@@ -827,3 +827,27 @@ for ( i in em.readLines()){
 }
 
 ```
+
+## Word pattern
+
+a)exact word 
+
+eg : "\bstring\b"
+
+b)start of word 
+
+eg : "\bstring"
+
+c)end of word 
+
+eg : "string\b"
+
+```
+^groovy.*groovy$ : Lines start with groovy and ends with groovy
+
+^groovy$ : Line should contains only groovy string 
+
+^[groovy] : Lines start with any character g or r or o or v or y 
+
+^[^groovy] : Lines does not start with g or r or o or v or y 
+```
