@@ -642,15 +642,30 @@ wild card characters or meta characters or anchors or indentifiers
 `*  +  ? . [] [-] [^] {m} {m,n} {m,} |`
 
 2)Word pattern
-
-a)exact word 
-
-b)start of word 
-
-c)end of word 
+ - exact word 
+ - start of word 
+ - end of word 
 
 3)Line pattern
+ - Lines start with ^
+ - Lines ends with $
 
-a)Lines start with ^
+**Line pattern scripts**
 
-b)Lines ends with $
+```
+//script to get data that starts with word "Groovy"
+fo = new File ("C:/Users/chiragagarwal.j/Downloads/groovy_lab/files/test.txt")
+for ( i in fo.readLines()){
+	if (i =~ /^Groovy/){
+		println i
+	}
+}
+
+//script to get data that has only word "Groovy"
+fo = new File ("C:/Users/chiragagarwal.j/Downloads/groovy_lab/files/test.txt")
+for ( i in fo.readLines()){
+	if (i =~ /^Groovy$/){
+		println i
+	}
+}
+```
