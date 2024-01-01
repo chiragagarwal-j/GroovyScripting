@@ -539,7 +539,7 @@ println "drop first 2 values: " + ls.drop(2)
 ```
 emp_details=[101,"Jhon",102,"Bob",103,"Siri"]  =>Indexed Array
 
-emp_details=[101:"Jhon",102:"Bob",103:"Siri"]  =>Assosiative Array
+emp_details=[101:"Jhon",102:"Bob",103:"Siri"]  =>Associative Array
 ```
 
 ### Hash Map methods
@@ -601,4 +601,31 @@ carDetails.each { key, value ->
 //Checking if the HashMap is empty
 isEmpty = carDetails.isEmpty()
 println "Is Car Details empty: $isEmpty"
+```
+
+## File Handling
+Open a file , process a file 
+- read 
+- write
+- append
+
+1) getText() : It is used to read the data from the file. The complete file data it will take as a single string.
+
+2) readLines() : It is used to read the data from the file as a list. 
+
+```
+fo = new File ("C:/Users/chiragagarwal.j/Downloads/groovy_lab/files/test.txt")
+
+//read file data as strings
+k = fo.getText()
+println k
+
+//read file data as list
+l = fo.readLines()
+println l
+
+//read specific lines as strings
+for ( i in l[ 1..3]) {
+	println i
+}
 ```
