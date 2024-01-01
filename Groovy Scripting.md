@@ -988,3 +988,93 @@ try {
 	println "An unexpected error occured: ${e.message}"
 }
 ```
+
+## OOPS Concept
+
+```
+class X {
+    def a
+    def m1() {
+        this.a = 100
+        println "I am in m1 of X"
+        println a
+    }
+    def m2() {
+        def b = 200
+        println "I am in m2 of X"
+        println b
+    }
+}
+```
+
+## Class variables
+
+1) Static variables : inside of the class and outside of all the methods 
+
+eg : final x=100
+
+2) Non static variables or instance variables : we can access anywhere(in any method). It is recomended to initialize and load with constructor.
+
+eg : this.variablename
+
+
+3) Local variables : Local variables we can access only within that methods
+
+eg : def variablename=10
+
+Example:
+
+```
+//BankApp
+
+class Bank{
+
+    def customer_name
+    def customer_acc
+    def customer_add
+    def customer_bal
+
+    Bank(customer_name,customer_acc,customer_add){
+        this.customer_name = customer_name
+        this.customer_acc = customer_acc
+        this.customer_add = customer_add
+        this.customer_bal = 0
+
+    }
+
+    def withdraw(withdraw_amount){
+        if (withdraw_amount <= 0) {
+            println "Invalid withdrawal amount"
+        } else if (withdraw_amount > this.customer_bal) {
+            println "Insufficient funds"
+        } else {
+            this.customer_bal -= withdraw_amount
+            println "${this.customer_name}, Withdrawal of ${withdraw_amount} successful. Current balance: ${this.customer_bal}"
+        }
+    }
+
+    def getBalance(){
+        println "${this.customer_name}, Your current balance is: ${this.customer_bal}"
+
+    }
+
+    def deposit(deposit_amount) {
+        customer_bal += deposit_amount
+        println "${customer_name}, you have successfully deposited ${deposit_amount}."
+    }
+
+    def getCustomerDetails(){
+        println "Customer Details : "
+        println "Customer Name: ${this.customer_name}"
+        println "Account Number: ${this.customer_acc}"
+        println "Address: ${this.customer_add}"
+        println "Current Balance: ${this.customer_bal}"
+    }
+}
+
+def customer1 = new Bank("ABC", "123456789", "CDEF Street")
+customer1.deposit(100)
+customer1.getBalance()
+customer1.withdraw(10)
+customer1.getCustomerDetails()
+```
